@@ -15,7 +15,7 @@ jobs:
         working-directory: apps/web
       - run: npm run build
         working-directory: apps/web
-        env: {VITE_API_URL: ${{ vars.VITE_API_URL }}}
+        env: {VITE_API_URL: "https://chat-silica.onrender.com"}
       - uses: actions/upload-pages-artifact@v3
         with: {path: apps/web/dist}
       - id: deployment

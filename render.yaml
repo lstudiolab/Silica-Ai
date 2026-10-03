@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: silica-ai-api
+    runtime: node
+    rootDir: apps/api
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: FRONTEND_ORIGIN
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: openai/gpt-6-astra
+      - key: OPENROUTER_FALLBACK_MODELS
+        value: openai/gpt-5.6-sol
